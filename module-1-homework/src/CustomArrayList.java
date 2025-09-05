@@ -48,7 +48,7 @@ public class CustomArrayList<T> {
         checkFillingOfInternalArray(REQUIRED_FREE_SPACE_FOR_ONE_ELEMENT);
 
         int countOfElementsAfterInserted = indexOfElementForInsert - indexForInsert;
-        System.arraycopy(internalArray, indexForInsert, internalArray, indexForInsert+1, countOfElementsAfterInserted);
+        System.arraycopy(internalArray, indexForInsert, internalArray, indexForInsert + 1, countOfElementsAfterInserted);
         internalArray[indexForInsert] = elem;
         indexOfElementForInsert++;
 
