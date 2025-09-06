@@ -3,9 +3,7 @@ import java.util.List;
 
 public class Student {
 
-    private long numberOfRegisteredStudents = 0L;
-
-    private final long id;
+    private final int id;
     private final String lastName;
     private final String firstName;
     private final String middleName;
@@ -14,7 +12,7 @@ public class Student {
     private final List<Book> borrowedBooks;
 
     public Student(String lastName, String firstName, String middleName, Short age, String phoneNumber, List<Book> borrowedBooks) {
-        this.id = getUniqueStudentId();
+        this.id = this.hashCode();
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -29,7 +27,7 @@ public class Student {
                 "\nfirstName = " + firstName +
                 "\nlastName = " + lastName +
                 "\nmiddleName = " + middleName +
-                "\nage=" + age +
+                "\nage = " + age +
                 "\nborrowedBooks =\n" + borrowedBooks +
                 "\nphoneNumber = " + phoneNumber + "]\n\n";
     }
@@ -40,11 +38,6 @@ public class Student {
 
     public void insertNewBook(Book newBook) {
         borrowedBooks.add(newBook);
-    }
-
-    private long getUniqueStudentId() {
-        numberOfRegisteredStudents++;
-        return numberOfRegisteredStudents;
     }
 
 }
