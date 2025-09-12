@@ -24,9 +24,9 @@ public class FileManager {
             byte[] dataFromFile = inputStream.readAllBytes();
             System.out.println("Data from file:\n" + new String(dataFromFile, StandardCharsets.UTF_8));
         } catch (FileNotFoundException e) {
-            throw new CustomException("File not found!");
+            throw new CustomException("File not found! Message: " + e.getMessage());
         } catch (IOException e) {
-            throw new CustomException("Something wrong with input");
+            throw new CustomException("Something wrong with input. Cause: " + e.getMessage());
         }
         System.out.println("Reading is over");
         if (fileForData.delete()) {
