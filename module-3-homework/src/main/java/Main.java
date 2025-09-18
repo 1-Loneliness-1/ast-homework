@@ -1,3 +1,6 @@
+import ChainOfResponsibility.Registratura;
+import ChainOfResponsibility.Surgeon;
+import ChainOfResponsibility.Therapist;
 import Strategy.BubbleSorter;
 import Strategy.MergeSorter;
 import Strategy.SortController;
@@ -12,6 +15,16 @@ public class Main {
         // Меняем поведение контроллера без изменения кода внутри класса
         sortController.setSorter(new MergeSorter());
         sortController.doSort();
+
+        // Демонстрация работы поведенческого паттерна "Цепочка обязанностей"
+        Surgeon surgeon = new Surgeon();
+        Therapist therapist = new Therapist(surgeon);
+        Registratura registratura = new Registratura(therapist);
+
+        registratura.handle("справка");
+        registratura.handle("легкая болезнь");
+        registratura.handle("хирургическая проблема");
+        registratura.handle("невыполнимый запрос");
     }
 
 }
