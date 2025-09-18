@@ -1,3 +1,4 @@
+import Builder.Person;
 import ChainOfResponsibility.Registratura;
 import ChainOfResponsibility.Surgeon;
 import ChainOfResponsibility.Therapist;
@@ -25,6 +26,11 @@ public class Main {
         registratura.handle("легкая болезнь");
         registratura.handle("хирургическая проблема");
         registratura.handle("невыполнимый запрос");
+
+        // Демонстрация работы порождающего паттерна "Builder"
+        Person person = new Person.Builder("Ivan", "Petrov", 26)
+                .setEmail("someemail@gmail.com")
+                .build();
     }
 
 }
