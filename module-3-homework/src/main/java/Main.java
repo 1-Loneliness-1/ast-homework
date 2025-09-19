@@ -1,3 +1,5 @@
+import Adapter.OldUserClass;
+import Adapter.UserAdapter;
 import Builder.Person;
 import ChainOfResponsibility.Registratura;
 import ChainOfResponsibility.Surgeon;
@@ -51,6 +53,11 @@ public class Main {
         System.out.printf("%s за %d\n", coffee.getDescription(), coffee.getCost());
         coffee = new CoffeeWithSugar(coffee);
         System.out.printf("%s за %d\n", coffee.getDescription(), coffee.getCost());
+
+        // Демонстрация работы структурного паттерна Adapter
+        OldUserClass oldUser = new OldUserClass("Иван", "Иванов", "Иванович", "24 года");
+        UserAdapter userAdapter = new UserAdapter(oldUser);
+        System.out.printf("Полное имя пользователя: %s.\nВозраст: %d\n", userAdapter.getFullName(), userAdapter.getAge());
     }
 
 }
