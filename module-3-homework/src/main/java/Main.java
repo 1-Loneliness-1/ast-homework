@@ -2,6 +2,10 @@ import Builder.Person;
 import ChainOfResponsibility.Registratura;
 import ChainOfResponsibility.Surgeon;
 import ChainOfResponsibility.Therapist;
+import Decorator.Beverage;
+import Decorator.Coffee;
+import Decorator.CoffeeWithMilk;
+import Decorator.CoffeeWithSugar;
 import Proxy.FileProxy;
 import Strategy.BubbleSorter;
 import Strategy.MergeSorter;
@@ -39,6 +43,14 @@ public class Main {
         fileProxy.displayFile();
         System.out.println("Пробуем повторно загрузить и отобразить файл:");
         fileProxy.displayFile();
+
+        // Демонстрация работы структурного паттерна Decorator
+        Beverage coffee = new Coffee("Черный кофе", 15);
+        System.out.printf("%s за %d\n", coffee.getDescription(), coffee.getCost());
+        coffee = new CoffeeWithMilk(coffee);
+        System.out.printf("%s за %d\n", coffee.getDescription(), coffee.getCost());
+        coffee = new CoffeeWithSugar(coffee);
+        System.out.printf("%s за %d\n", coffee.getDescription(), coffee.getCost());
     }
 
 }
