@@ -2,6 +2,7 @@ import Builder.Person;
 import ChainOfResponsibility.Registratura;
 import ChainOfResponsibility.Surgeon;
 import ChainOfResponsibility.Therapist;
+import Proxy.FileProxy;
 import Strategy.BubbleSorter;
 import Strategy.MergeSorter;
 import Strategy.SortController;
@@ -31,6 +32,13 @@ public class Main {
         Person person = new Person.Builder("Ivan", "Petrov", 26)
                 .setEmail("someemail@gmail.com")
                 .build();
+
+        // Демонстрация работы структурного паттерна Proxy
+        FileProxy fileProxy = new FileProxy("C:\\SomeFolder\\SubFolder\\important.txt");
+        System.out.println("Пробуем загрузить и отобразить файл впервые:");
+        fileProxy.displayFile();
+        System.out.println("Пробуем повторно загрузить и отобразить файл:");
+        fileProxy.displayFile();
     }
 
 }
