@@ -39,14 +39,14 @@ public class Main {
                 .setEmail("someemail@gmail.com")
                 .build();
 
-        // Демонстрация работы структурного паттерна Proxy
+        // Демонстрация работы структурного паттерна "Proxy"
         FileProxy fileProxy = new FileProxy("C:\\SomeFolder\\SubFolder\\important.txt");
         System.out.println("Пробуем загрузить и отобразить файл впервые:");
         fileProxy.displayFile();
         System.out.println("Пробуем повторно загрузить и отобразить файл:");
         fileProxy.displayFile();
 
-        // Демонстрация работы структурного паттерна Decorator
+        // Демонстрация работы структурного паттерна "Decorator"
         Beverage coffee = new Coffee("Черный кофе", 15);
         System.out.printf("%s за %d\n", coffee.getDescription(), coffee.getCost());
         coffee = new CoffeeWithMilk(coffee);
@@ -54,7 +54,7 @@ public class Main {
         coffee = new CoffeeWithSugar(coffee);
         System.out.printf("%s за %d\n", coffee.getDescription(), coffee.getCost());
 
-        // Демонстрация работы структурного паттерна Adapter
+        // Демонстрация работы структурного паттерна "Adapter"
         OldUserClass oldUser = new OldUserClass("Иван", "Иванов", "Иванович", "24 года");
         UserAdapter userAdapter = new UserAdapter(oldUser);
         System.out.printf("Полное имя пользователя: %s.\nВозраст: %d\n", userAdapter.getFullName(), userAdapter.getAge());
