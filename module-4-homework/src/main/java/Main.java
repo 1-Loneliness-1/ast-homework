@@ -1,7 +1,8 @@
 public class Main {
 
     public static void main(String[] args) {
-        DeadLock.startDeadLockSituation();
+        // DeadLock.startDeadLockSituation();
+        LiveLock.startLiveLockSituation();
     }
 
 }
